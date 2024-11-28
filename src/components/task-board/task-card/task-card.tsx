@@ -1,6 +1,7 @@
 import React, { CSSProperties, memo } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { Task } from "@/types/task";
+import TaskCardContent from "./task-card-content";
 
 interface TaskCardProps {
   id: string;
@@ -25,15 +26,11 @@ export default memo(function TaskCard({ id, task, isDragging }: TaskCardProps) {
       style={style}
       {...listeners}
       {...attributes}
-      className={`my-2 p-3 bg-custom-generic-white rounded-md shadow transition-all duration-200 cursor-move ${
+      className={`transition-all duration-200 cursor-move ${
         isDragging ? "opacity-0" : ""
       }`}
     >
-      <div className="flex justify-between items-center">
-        <span className="text-sm font-medium line-clamp-1">
-          {task.name} {task.status}
-        </span>
-      </div>
+      <TaskCardContent task={task} />
     </div>
   );
 });
