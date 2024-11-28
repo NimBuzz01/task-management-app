@@ -8,7 +8,7 @@ interface SidebarToggleProps {
   setIsOpen?: () => void;
 }
 
-export function SidebarToggle({ isOpen, setIsOpen }: SidebarToggleProps) {
+const SidebarToggle = ({ isOpen, setIsOpen }: SidebarToggleProps) => {
   return (
     <div className="invisible lg:visible absolute top-[12px] -right-[16px] z-20">
       <Button
@@ -26,4 +26,6 @@ export function SidebarToggle({ isOpen, setIsOpen }: SidebarToggleProps) {
       </Button>
     </div>
   );
-}
+};
+
+export default SidebarToggle;
