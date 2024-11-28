@@ -1,5 +1,5 @@
 import { useTaskStore } from "@/store/use-task-store";
-import { Task, TaskStatus } from "@/types/task";
+import { Task } from "@/types/task";
 
 export const useTaskActions = () => {
   const { addTask, updateTask, deleteTask, updateTaskProperty } =
