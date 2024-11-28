@@ -1,14 +1,8 @@
-import { TaskForm } from "@/components/tasks/task-form";
-import { TaskList } from "@/components/tasks/task-list";
+import TaskBoard from "@/components/task-board/task-board";
 import React from "react";
 
 const TasksPage = () => {
-  return (
-    <div>
-      <TaskForm />
-      <TaskList />
-    </div>
-  );
+  return <TaskBoard />;
 };
 
 export default TasksPage;
