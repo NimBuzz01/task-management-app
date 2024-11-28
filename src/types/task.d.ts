@@ -1,8 +1,6 @@
-// Priority levels
 export type TaskPriority = "low" | "medium" | "high";
 
-// Task status
-export type TaskStatus = "To Do" | "In Progress" | "Completed";
+export type TaskStatus = "Todo" | "In Progress" | "Completed";
 
 export interface Task {
   id: string;

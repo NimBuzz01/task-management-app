@@ -8,7 +8,7 @@ const StatusHeader = ({ status }: { status: TaskStatus }) => {
 
   const getStatusColor = (status: TaskStatus) => {
     switch (status) {
-      case "To Do":
+      case "Todo":
         return "text-custom-status-warning-500";
       case "In Progress":
         return "text-custom-status-info-500";

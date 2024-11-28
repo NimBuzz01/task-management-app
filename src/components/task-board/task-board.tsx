@@ -20,7 +20,7 @@ import { useTaskActions } from "@/hooks/use-task-actions";
 import { useTaskStore } from "@/store/use-task-store";
 import StatusColumn from "./status-column";
 
-const STATUS_COLUMNS: TaskStatus[] = ["To Do", "In Progress", "Completed"];
+const STATUS_COLUMNS: TaskStatus[] = ["Todo", "In Progress", "Completed"];
 
 const TaskBoard = () => {
   const { updateStatus } = useTaskActions();
