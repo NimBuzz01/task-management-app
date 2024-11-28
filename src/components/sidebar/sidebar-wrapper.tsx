@@ -2,10 +2,15 @@
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import React from "react";
-import { Sidebar } from "./sidebar";
+import Sidebar from ".";
 import { cn } from "@/lib/utils";
+import ContentLayout from "../content-layout";
 
-const SidebarWrapper = ({ children }: { children: React.ReactNode }) => {
+interface SidebarWrapperProps {
+  children: React.ReactNode;
+}
+
+const SidebarWrapper = ({ children }: SidebarWrapperProps) => {
   const sidebar = useStore(useSidebar, (x) => x);
   if (!sidebar) return null;
   const { getOpenState } = sidebar;
@@ -19,7 +24,7 @@ const SidebarWrapper = ({ children }: { children: React.ReactNode }) => {
           !getOpenState() ? "lg:ml-[90px]" : "lg:ml-72"
         )}
       >
-        {children}
+        <ContentLayout>{children}</ContentLayout>
       </main>
     </>
   );

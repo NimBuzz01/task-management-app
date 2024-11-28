@@ -17,7 +17,7 @@ interface MenuProps {
   isOpen: boolean;
 }
 
-export function Menu({ isOpen }: MenuProps) {
+const Menu = ({ isOpen }: MenuProps) => {
   const pathname = usePathname();
 
   return (
@@ -66,4 +66,6 @@ export function Menu({ isOpen }: MenuProps) {
       </nav>
     </ScrollArea>
   );
-}
+};
+
+export default Menu;
