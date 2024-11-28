@@ -3,24 +3,15 @@ import { persist, createJSONStorage } from "zustand/middleware";
 
 type SidebarStore = {
   isOpen: boolean;
-  toggleOpen: () => void;
   setIsOpen: (isOpen: boolean) => void;
-  getOpenState: () => boolean;
 };
 
 export const useSidebar = create(
   persist<SidebarStore>(
-    (set, get) => ({
+    (set) => ({
       isOpen: true,
-      toggleOpen: () => {
-        set({ isOpen: !get().isOpen });
-      },
       setIsOpen: (isOpen: boolean) => {
         set({ isOpen });
-      },
-      getOpenState: () => {
-        const state = get();
-        return state.isOpen;
       },
     }),
     {
