@@ -1,4 +1,3 @@
-import { mockTasks } from "@/data/mock-tasks";
 import { Task, TaskStatus } from "@/types/task";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -14,7 +13,7 @@ interface TaskState {
 export const useTaskStore = create<TaskState>()(
   persist(
     (set) => ({
-      tasks: mockTasks,
+      tasks: [],
       addTask: (task) => {
         set((state) => ({
           tasks: [...state.tasks, task],
