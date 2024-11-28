@@ -34,6 +34,6 @@ export const useAssigneeStore = create<AssigneeState>()(
         }));
       },
     }),
-    { name: "assignee-storage" }
+    { name: "assignee-store" }
   )
 );

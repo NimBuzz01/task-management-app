@@ -43,6 +43,6 @@ export const useTaskStore = create<TaskState>()(
         }));
       },
     }),
-    { name: "task-storage" }
+    { name: "task-store" }
   )
 );
