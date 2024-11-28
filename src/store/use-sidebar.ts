@@ -15,7 +15,7 @@ export const useSidebar = create(
       },
     }),
     {
-      name: "sidebar",
+      name: "sidebar-store",
       storage: createJSONStorage(() => localStorage),
     }
   )
