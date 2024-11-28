@@ -23,7 +23,7 @@ import StatusColumn from "./status-column";
 const STATUS_COLUMNS: TaskStatus[] = ["To Do", "In Progress", "Completed"];
 
 const TaskBoard = () => {
-  const { updateStatus } = useTaskActions();
+  const { updateProperty } = useTaskActions();
   const tasks = useTaskStore((state) => state.tasks);
 
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -48,7 +48,7 @@ const TaskBoard = () => {
       const activeTask = tasks.find((task) => task.id === active.id);
       const overContainer = over.id as TaskStatus;
       if (activeTask && activeTask.status !== overContainer) {
-        updateStatus(active.id as string, overContainer);
+        updateProperty(active.id as string, "status", overContainer);
       }
     }
     setActiveId(null);

@@ -1,4 +1,4 @@
-import { Task, TaskStatus } from "@/types/task";
+import { Task } from "@/types/task";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -7,7 +7,11 @@ interface TaskState {
   addTask: (task: Task) => void;
   updateTask: (updatedTask: Task) => void;
   deleteTask: (taskId: string) => void;
-  updateTaskStatus: (taskId: string, status: TaskStatus) => void;
+  updateTaskProperty: (
+    taskId: string,
+    property: keyof Task,
+    value: any
+  ) => void;
 }
 
 export const useTaskStore = create<TaskState>()(
@@ -26,10 +30,10 @@ export const useTaskStore = create<TaskState>()(
           ),
         }));
       },
-      updateTaskStatus: (taskId, status) => {
+      updateTaskProperty: (taskId, property, value) => {
         set((state) => ({
           tasks: state.tasks.map((task) =>
-            task.id === taskId ? { ...task, status } : task
+            task.id === taskId ? { ...task, [property]: value } : task
           ),
         }));
       },
