@@ -19,22 +19,22 @@ export const menuList = [
     icon: ListChecks,
   },
   {
-    href: "/report",
+    href: "#",
     label: "Report",
     icon: ChartLine,
   },
   {
-    href: "/insights",
+    href: "#",
     label: "Insights",
     icon: Lightbulb,
   },
   {
-    href: "/inbox",
+    href: "#",
     label: "Inbox",
     icon: Bell,
   },
   {
-    href: "/settings",
+    href: "#",
     label: "Settings",
     icon: Settings,
   },
