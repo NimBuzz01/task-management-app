@@ -1,6 +1,6 @@
 import React from "react";
 
-const StyleConfigSamples = () => {
+const SamplePalette = () => {
   return (
     <div>
       <h1 className="text-h1 my-4">Task Management App</h1>
@@ -45,4 +45,4 @@ const StyleConfigSamples = () => {
   );
 };
 
-export default StyleConfigSamples;
+export default SamplePalette;

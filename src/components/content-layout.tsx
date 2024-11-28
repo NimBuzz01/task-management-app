@@ -8,7 +8,7 @@ const ContentLayout = ({ children }: ContentLayoutProps) => {
   return (
     <div>
       <Nav />
-      <div className="container pt-8 pb-8 px-4 sm:px-8">{children}</div>
+      <div className="container py-8 px-4 sm:px-8 mx-auto">{children}</div>
     </div>
   );
 };
