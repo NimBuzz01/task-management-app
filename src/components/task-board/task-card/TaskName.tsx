@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { Task } from "@/types/task";
 import React from "react";
 

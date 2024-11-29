@@ -16,9 +16,9 @@ import {
 } from "@dnd-kit/core";
 import TaskCard from "./task-card/TaskCard";
 import { TaskStatus } from "@/types/task";
-import { useTaskActions } from "@/hooks/use-task-actions";
 import StatusColumn from "./StatusColumn";
 import { useTaskStore } from "@/store/useTaskStore";
+import { useTaskActions } from "@/hooks/useTaskActions";
 
 const STATUS_COLUMNS: TaskStatus[] = ["To Do", "In Progress", "Completed"];
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
 import { generateTask } from "@/lib/utils/task-utils";
 import { TaskStatus } from "@/types/task";

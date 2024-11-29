@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SidebarWrapper from "@/components/sidebar/sidebar-wrapper";
 import { Toaster } from "react-hot-toast";
+import SidebarWrapper from "@/components/sidebar/SidebarWrapper";
 
 const font = Inter({
   subsets: ["latin"],

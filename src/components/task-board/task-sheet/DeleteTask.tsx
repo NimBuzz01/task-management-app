@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { useTaskSheet } from "@/store/useTaskSheet";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Trash } from "lucide-react";

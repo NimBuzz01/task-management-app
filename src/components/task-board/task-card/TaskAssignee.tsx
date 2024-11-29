@@ -5,7 +5,7 @@ import {
   SelectTrigger,
   SelectContent,
 } from "@/components/ui/select";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
 import { useAssigneeStore } from "@/store/useAssigneeStore";
 import { Task } from "@/types/task";

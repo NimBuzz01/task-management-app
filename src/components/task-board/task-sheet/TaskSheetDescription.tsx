@@ -3,7 +3,7 @@ import React from "react";
 import LabelBadge from "./LabelBadge";
 import { FileText } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 
 const TaskSheetDescription = ({ task }: { task: Task }) => {
   const { updateProperty } = useTaskActions();
