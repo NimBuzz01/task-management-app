@@ -2,7 +2,7 @@
 import React from "react";
 import Sidebar from ".";
 import { cn } from "@/lib/utils";
-import ContentLayout from "../content-layout";
+import ContentLayout from "../ContentLayout";
 import { useSidebar } from "@/store/useSidebar";
 
 interface SidebarWrapperProps {

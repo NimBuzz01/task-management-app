@@ -14,11 +14,11 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import TaskCard from "./task-card/task-card";
+import TaskCard from "./task-card/TaskCard";
 import { TaskStatus } from "@/types/task";
 import { useTaskActions } from "@/hooks/use-task-actions";
-import { useTaskStore } from "@/store/use-task-store";
-import StatusColumn from "./status-column";
+import StatusColumn from "./StatusColumn";
+import { useTaskStore } from "@/store/useTaskStore";
 
 const STATUS_COLUMNS: TaskStatus[] = ["To Do", "In Progress", "Completed"];
 
