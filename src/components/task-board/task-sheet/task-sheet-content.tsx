@@ -33,10 +33,10 @@ const TaskSheetContent = () => {
       <div className="p-4 py-6 space-y-6">
         <TaskSheetName task={task} />
         <div className="space-y-6">
-          <TaskSheetStatus task={task} />
-          <TaskSheetDate task={task} />
-          <TaskSheetAssignee task={task} />
-          <TaskSheetPriority task={task} />
+          <TaskSheetStatus taskId={task.id} />
+          <TaskSheetDate taskId={task.id} />
+          <TaskSheetAssignee taskId={task.id} />
+          <TaskSheetPriority taskId={task.id} />
         </div>
         <TaskSheetDescription task={task} />
       </div>

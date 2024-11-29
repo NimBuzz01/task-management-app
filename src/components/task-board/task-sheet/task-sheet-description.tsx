@@ -8,7 +8,7 @@ import { useTaskActions } from "@/hooks/use-task-actions";
 const TaskSheetDescription = ({ task }: { task: Task }) => {
   const { updateProperty } = useTaskActions();
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <LabelBadge label="Description" icon={FileText} />
       <Textarea
         value={task.description || ""}
