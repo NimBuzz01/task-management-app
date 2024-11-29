@@ -29,7 +29,7 @@ const TaskAssignee = ({ task }: { task: Task }) => {
     >
       <SelectTrigger
         className={cn(
-          "min-h-10 min-w-10 h-max border-custom-dark-100 rounded-full w-max p-0",
+          "relative h-10 w-10 border-custom-dark-100 rounded-full p-0",
           task.assignee ? "border-solid" : "border-dashed"
         )}
       >
