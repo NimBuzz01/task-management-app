@@ -12,6 +12,7 @@ import { Dot } from "lucide-react";
 import React from "react";
 
 const TaskPriority = ({ task }: { task: Task }) => {
+  const { id, priority } = task;
   const { updateProperty } = useTaskActions();
 
   const priorityStyles: Record<string, string> = {
@@ -20,24 +21,26 @@ const TaskPriority = ({ task }: { task: Task }) => {
     high: "text-custom-status-danger-500 bg-custom-status-danger-50",
   };
 
+  const triggerClasses = cn(
+    "!caption-c1 border-dashed rounded-md w-max text-custom-dark-300 !body-b1",
+    priority &&
+      `${priorityStyles[priority]} pr-2 pl-0 !font-semibold border-none`
+  );
+
   return (
     <Select
-      value={task.priority}
-      onValueChange={(value: string) =>
-        updateProperty(task.id, "priority", value)
-      }
+      value={priority}
+      onValueChange={(value: string) => updateProperty(id, "priority", value)}
     >
-      <SelectTrigger
-        className={cn(
-          "!caption-c1 border-dashed rounded-md",
-          task.priority &&
-            `${
-              priorityStyles[task.priority]
-            } pr-2 pl-0 !font-semibold border-none`
+      <SelectTrigger className={triggerClasses}>
+        {priority ? (
+          <>
+            <Dot className="size-6" />
+            <SelectValue placeholder="Set priority" />
+          </>
+        ) : (
+          "Set priority"
         )}
-      >
-        {task.priority && <Dot className="size-6" />}
-        <SelectValue placeholder="Set priority" className="!body-b1" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="low">Low</SelectItem>
