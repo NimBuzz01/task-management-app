@@ -17,18 +17,18 @@ const MarkCompleteButton = ({ taskId, className }: MarkCompleteButtonProps) => {
     state.tasks.find((task) => task.id === taskId)
   );
 
-  if (!task) return null;
-
   const buttonClass = useMemo(
     () =>
       cn(
         "border",
-        task.status === "Completed" &&
+        task?.status === "Completed" &&
           "text-custom-status-success-500 bg-custom-status-success-50",
         className
       ),
-    [task.status, className]
+    [task?.status, className]
   );
+
+  if (!task) return null;
 
   return (
     <Button
