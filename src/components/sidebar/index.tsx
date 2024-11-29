@@ -5,6 +5,7 @@ import Link from "next/link";
 import Menu from "./SidebarMenu";
 import SidebarToggle from "./SidebarToggle";
 import { useSidebar } from "@/store/useSidebar";
+import MainLogo from "../MainLogo";
 
 const Sidebar = () => {
   const { isOpen, setIsOpen } = useSidebar();
@@ -26,7 +27,7 @@ const Sidebar = () => {
           asChild
         >
           <Link href="/" className="flex items-center gap-2">
-            LOGO
+            <MainLogo variant={isOpen ? "lg" : "sm"} />
           </Link>
         </Button>
         <Menu isOpen={isOpen} />
