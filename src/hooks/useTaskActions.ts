@@ -1,4 +1,4 @@
-import { useTaskStore } from "@/store/use-task-store";
+import { useTaskStore } from "@/store/useTaskStore";
 import { Task } from "@/types/task";
 
 export const useTaskActions = () => {

@@ -1,6 +1,6 @@
-import MobileNavMenu from "./mobile-nav-menu";
-import SearchBar from "./search-bar";
-import UserNav from "./user-nav";
+import MobileNavMenu from "./MobileNavMenu";
+import SearchBar from "./SearchBar";
+import UserNav from "./UserNav";
 
 const Nav = () => {
   return (

@@ -1,15 +1,15 @@
-import DeleteTask from "./delete-task";
+import DeleteTask from "./DeleteTask";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import MarkCompleteButton from "./mark-complete-button";
-import { useTaskSheet } from "@/store/use-task-sheet-store";
+import MarkCompleteButton from "./MarkCompleteButton";
 import React, { useCallback } from "react";
-import TaskSheetName from "./task-sheet-name";
-import TaskSheetStatus from "./task-sheet-status";
-import TaskSheetDate from "./task-sheet-date";
-import TaskSheetAssignee from "./task-sheet-assignee";
-import TaskSheetPriority from "./task-sheet-priority";
-import TaskSheetDescription from "./task-sheet-description";
+import TaskSheetName from "./TaskSheetName";
+import TaskSheetStatus from "./TaskSheetStatus";
+import TaskSheetDate from "./TaskSheetDate";
+import TaskSheetAssignee from "./TaskSheetAssignee";
+import TaskSheetPriority from "./TaskSheetPriority";
+import TaskSheetDescription from "./TaskSheetDescription";
+import { useTaskSheet } from "@/store/useTaskSheet";
 
 const TaskSheetContent = () => {
   const { task, setIsOpen, resetTask } = useTaskSheet();

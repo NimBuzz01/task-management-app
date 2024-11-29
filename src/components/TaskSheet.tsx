@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { useTaskSheet } from "@/store/use-task-sheet-store";
-import TaskSheetContent from "./task-board/task-sheet/task-sheet-content";
+import TaskSheetContent from "./task-board/task-sheet/TaskSheetContent";
+import { useTaskSheet } from "@/store/useTaskSheet";
 
 const TaskSheet = () => {
   const { isOpen, task } = useTaskSheet();
