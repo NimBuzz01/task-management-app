@@ -1,8 +1,8 @@
 import { Circle } from "lucide-react";
 import React from "react";
-import LabelBadge from "./label-badge";
-import StatusBadge from "@/components/status-badge";
-import { useTaskStore } from "@/store/use-task-store";
+import LabelBadge from "./LabelBadge";
+import { useTaskStore } from "@/store/useTaskStore";
+import StatusBadge from "@/components/StatusBadge";
 
 const TaskSheetStatus = ({ taskId }: { taskId: string }) => {
   const task = useTaskStore((state) =>

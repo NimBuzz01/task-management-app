@@ -13,11 +13,11 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-interface MenuProps {
+interface SidebarMenuProps {
   isOpen: boolean;
 }
 
-const Menu = ({ isOpen }: MenuProps) => {
+const SidebarMenu = ({ isOpen }: SidebarMenuProps) => {
   const pathname = usePathname();
 
   return (
@@ -68,4 +68,4 @@ const Menu = ({ isOpen }: MenuProps) => {
   );
 };
 
-export default Menu;
+export default SidebarMenu;

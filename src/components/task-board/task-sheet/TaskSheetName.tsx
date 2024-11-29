@@ -1,9 +1,9 @@
 import { Input } from "@/components/ui/input";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { Task } from "@/types/task";
 import React from "react";
 
-const TaskName = ({ task }: { task: Task }) => {
+const TaskSheetName = ({ task }: { task: Task }) => {
   const { updateProperty } = useTaskActions();
 
   return (
@@ -12,9 +12,9 @@ const TaskName = ({ task }: { task: Task }) => {
       onChange={(e) => updateProperty(task.id, "name", e.currentTarget.value)}
       aria-label="Task name"
       placeholder="Write a task name"
-      className="w-full border-none outline-none !body-b2 focus:outline-none focus:ring-0 shadow-none focus-visible:ring-transparent"
+      className="!body-b2"
     />
   );
 };
 
-export default TaskName;
+export default TaskSheetName;

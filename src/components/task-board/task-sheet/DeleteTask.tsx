@@ -8,8 +8,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useTaskActions } from "@/hooks/use-task-actions";
-import { useTaskSheet } from "@/store/use-task-sheet-store";
+import { useTaskActions } from "@/hooks/useTaskActions";
+import { useTaskSheet } from "@/store/useTaskSheet";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Trash } from "lucide-react";
 import toast from "react-hot-toast";

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useTaskActions } from "@/hooks/use-task-actions";
+import { useTaskActions } from "@/hooks/useTaskActions";
 import { Task } from "@/types/task";
 import { X } from "lucide-react";
 import React from "react";

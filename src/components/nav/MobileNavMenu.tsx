@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { MenuIcon, PanelsTopLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Menu from "@/components/sidebar/menu";
 import {
   Sheet,
   SheetHeader,
@@ -9,6 +8,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import SidebarMenu from "../sidebar/SidebarMenu";
 
 const MobileNavMenu = () => {
   return (
@@ -31,7 +31,7 @@ const MobileNavMenu = () => {
             </Link>
           </Button>
         </SheetHeader>
-        <Menu isOpen />
+        <SidebarMenu isOpen />
       </SheetContent>
     </Sheet>
   );

@@ -1,10 +1,10 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useDroppable } from "@dnd-kit/core";
 import React from "react";
-import TaskCard from "./task-card/task-card";
+import TaskCard from "./task-card/TaskCard";
 import { Task, TaskStatus } from "@/types/task";
-import AddTaskButton from "./add-task-button";
-import StatusHeader from "./status-header";
+import AddTaskButton from "./AddTaskButton";
+import StatusHeader from "./StatusHeader";
 
 const StatusColumn = ({
   tasks,

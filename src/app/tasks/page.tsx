@@ -1,4 +1,4 @@
-import TaskBoard from "@/components/task-board/task-board";
+import TaskBoard from "@/components/task-board/TaskBoard";
 import React from "react";
 
 const TasksPage = () => {
