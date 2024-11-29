@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SidebarWrapper from "@/components/sidebar/sidebar-wrapper";
+import { Toaster } from "react-hot-toast";
 
 const font = Inter({
   subsets: ["latin"],
@@ -20,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} antialiased`}>
-        <SidebarWrapper>{children}</SidebarWrapper>
+        <SidebarWrapper>
+          {children}
+          <Toaster />
+        </SidebarWrapper>
       </body>
     </html>
   );

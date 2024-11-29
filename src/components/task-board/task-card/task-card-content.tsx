@@ -7,11 +7,19 @@ import TaskAssignee from "./task-assignee";
 import TaskDate from "./task-date";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useTaskSheet } from "@/store/use-task-sheet-store";
 
 const TaskCardContent = ({ task }: { task: Task }) => {
+  const { setTask, setIsOpen } = useTaskSheet();
+
+  const handleClick = () => {
+    setTask(task);
+    setIsOpen(true);
+  };
+
   return (
-    <Card className="bg-custom-generic-white">
-      <div className="p-3 inline-flex items-center">
+    <Card className="bg-custom-generic-white" onClick={handleClick}>
+      <div className="p-3 inline-flex w-full items-center">
         <TaskCheck task={task} />
         <TaskName task={task} />
       </div>

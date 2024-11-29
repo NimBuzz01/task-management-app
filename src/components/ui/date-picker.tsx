@@ -31,7 +31,7 @@ export function DatePicker({
           <Button
             variant={"outline"}
             className={cn(
-              "border-dashed rounded-full text-custom-dark-300 border-custom-dark-100 p-2.5 h-max"
+              "border-dashed rounded-full text-custom-dark-300 border-custom-dark-100 p-3 h-max"
             )}
           >
             <CalendarIcon />
