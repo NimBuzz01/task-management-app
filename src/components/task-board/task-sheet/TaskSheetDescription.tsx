@@ -1,6 +1,6 @@
 import { Task } from "@/types/task";
 import React from "react";
-import LabelBadge from "./label-badge";
+import LabelBadge from "./LabelBadge";
 import { FileText } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { useTaskActions } from "@/hooks/use-task-actions";

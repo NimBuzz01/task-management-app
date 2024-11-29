@@ -1,6 +1,6 @@
 import { Circle } from "lucide-react";
 import React from "react";
-import LabelBadge from "./label-badge";
+import LabelBadge from "./LabelBadge";
 import StatusBadge from "@/components/status-badge";
 import { useTaskStore } from "@/store/useTaskStore";
 

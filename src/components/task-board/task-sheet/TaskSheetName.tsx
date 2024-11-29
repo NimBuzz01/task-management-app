@@ -3,7 +3,7 @@ import { useTaskActions } from "@/hooks/use-task-actions";
 import { Task } from "@/types/task";
 import React from "react";
 
-const SheetTaskName = ({ task }: { task: Task }) => {
+const TaskSheetName = ({ task }: { task: Task }) => {
   const { updateProperty } = useTaskActions();
 
   return (
@@ -17,4 +17,4 @@ const SheetTaskName = ({ task }: { task: Task }) => {
   );
 };
 
-export default SheetTaskName;
+export default TaskSheetName;

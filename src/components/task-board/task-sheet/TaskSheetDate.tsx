@@ -1,10 +1,10 @@
 import { CalendarIcon } from "lucide-react";
 import React from "react";
-import LabelBadge from "./label-badge";
+import LabelBadge from "./LabelBadge";
 import { format } from "date-fns";
 import { DatePicker } from "@/components/ui/date-picker";
 import { useTaskActions } from "@/hooks/use-task-actions";
-import RemovePropertyButton from "./remove-property-button";
+import RemovePropertyButton from "./RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 
 const TaskSheetDate = ({ taskId }: { taskId: string }) => {
