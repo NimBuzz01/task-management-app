@@ -1,7 +1,7 @@
 import React, { CSSProperties, memo } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { Task } from "@/types/task";
-import TaskCardContent from "./task-card-content";
+import TaskCardContent from "./TaskCardContent";
 
 interface TaskCardProps {
   id: string;

@@ -1,10 +1,10 @@
 import React from "react";
-import TaskCheck from "./task-check";
-import TaskName from "./task-name";
+import TaskCheck from "./TaskCheck";
+import TaskName from "./TaskName";
 import { Task } from "@/types/task";
-import TaskPriority from "./task-priority";
-import TaskAssignee from "./task-assignee";
-import TaskDate from "./task-date";
+import TaskPriority from "./TaskPriority";
+import TaskAssignee from "./TaskAssignee";
+import TaskDate from "./TaskDate";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTaskSheet } from "@/store/useTaskSheet";
