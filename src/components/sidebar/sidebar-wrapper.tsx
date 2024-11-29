@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from ".";
 import { cn } from "@/lib/utils";
 import ContentLayout from "../content-layout";
-import { useSidebar } from "@/store/use-sidebar";
+import { useSidebar } from "@/store/useSidebar";
 
 interface SidebarWrapperProps {
   children: React.ReactNode;

@@ -4,8 +4,8 @@ import LabelBadge from "./label-badge";
 import { format } from "date-fns";
 import { DatePicker } from "@/components/ui/date-picker";
 import { useTaskActions } from "@/hooks/use-task-actions";
-import { useTaskStore } from "@/store/use-task-store";
 import RemovePropertyButton from "./remove-property-button";
+import { useTaskStore } from "@/store/useTaskStore";
 
 const TaskSheetDate = ({ taskId }: { taskId: string }) => {
   const { updateProperty } = useTaskActions();

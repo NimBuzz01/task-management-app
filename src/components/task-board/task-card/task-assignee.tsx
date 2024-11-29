@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { useTaskActions } from "@/hooks/use-task-actions";
 import { cn } from "@/lib/utils";
-import { useAssigneeStore } from "@/store/use-assignee-store";
+import { useAssigneeStore } from "@/store/useAssigneeStore";
 import { Task } from "@/types/task";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";

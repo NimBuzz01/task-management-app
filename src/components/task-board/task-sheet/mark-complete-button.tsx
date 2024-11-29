@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useTaskActions } from "@/hooks/use-task-actions";
 import { cn } from "@/lib/utils";
-import { useTaskStore } from "@/store/use-task-store";
+import { useTaskStore } from "@/store/useTaskStore";
 import { CheckCircle } from "lucide-react";
 import React, { useMemo } from "react";
 

@@ -7,7 +7,7 @@ import TaskAssignee from "./task-assignee";
 import TaskDate from "./task-date";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { useTaskSheet } from "@/store/use-task-sheet-store";
+import { useTaskSheet } from "@/store/useTaskSheet";
 
 const TaskCardContent = ({ task }: { task: Task }) => {
   const { setTask, setIsOpen } = useTaskSheet();

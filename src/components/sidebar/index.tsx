@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Menu from "./menu";
 import SidebarToggle from "./sidebar-toggle";
-import { useSidebar } from "@/store/use-sidebar";
+import { useSidebar } from "@/store/useSidebar";
 
 const Sidebar = () => {
   const { isOpen, setIsOpen } = useSidebar();
