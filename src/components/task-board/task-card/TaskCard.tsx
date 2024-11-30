@@ -13,7 +13,7 @@ const TaskCard = memo(function TaskCard({ task }: { task: Task }) {
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      className={`transition-all duration-200 cursor-grab ${
+      className={`transition-all duration-200 ${
         isDragging ? "cursor-grabbing" : ""
       }`}
     >

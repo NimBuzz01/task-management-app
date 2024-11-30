@@ -9,7 +9,7 @@ const ContentLayout = ({ children }: ContentLayoutProps) => {
   return (
     <div className="relative overflow-hidden">
       <Nav />
-      <div className="container py-8 px-4 sm:px-8 mx-auto">{children}</div>
+      <div className="2xl:container py-8 px-4 sm:px-8 mx-auto">{children}</div>
       <TaskSheet />
     </div>
   );

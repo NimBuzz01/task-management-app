@@ -17,14 +17,16 @@ export function DatePicker({
   value,
   onChange,
   className,
+  disabled,
 }: {
   value: Date | undefined;
   onChange: (date: Date | undefined) => void;
   className?: string;
+  disabled?: boolean;
 }) {
   return (
     <Popover>
-      <PopoverTrigger asChild>
+      <PopoverTrigger asChild className={disabled ? "pointer-events-none" : ""}>
         {value ? (
           <Button
             variant="outline"
