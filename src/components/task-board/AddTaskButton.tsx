@@ -15,15 +15,20 @@ const AddTaskButton = ({
   variant?: "default" | "icon";
   className?: string;
 }) => {
-  const { createTask } = useTaskActions();
+  const { createTask, clearEmptyTasks } = useTaskActions();
   const newTask = generateTask(status);
+
+  const handleClick = () => {
+    createTask(newTask);
+    clearEmptyTasks();
+  };
 
   return (
     <Button
       size={variant === "icon" ? "icon" : "default"}
       variant="ghost"
       className={cn("text-custom-dark-300", className)}
-      onClick={() => createTask(newTask)}
+      onClick={handleClick}
     >
       <Plus /> {variant === "default" && "Add Task"}
     </Button>
