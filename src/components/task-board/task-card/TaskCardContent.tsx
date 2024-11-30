@@ -8,6 +8,9 @@ import TaskDate from "./TaskDate";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTaskSheet } from "@/store/useTaskSheet";
+import { isWithinWeekRange } from "@/lib/utils/task-utils";
+import TaskDateText from "./TaskDateText";
+import TaskDescription from "./TaskDescription";
 
 const TaskCardContent = ({ task }: { task: Task }) => {
   const { setTask, setIsOpen } = useTaskSheet();
@@ -24,13 +27,21 @@ const TaskCardContent = ({ task }: { task: Task }) => {
         <TaskName task={task} />
       </div>
       <Separator />
-      <div className="p-2 flex items-center gap-2">
+      {task.description && (
+        <div className="p-2 px-4">
+          <TaskDescription task={task} />
+        </div>
+      )}
+      <div className="p-2 px-4 flex items-center gap-2">
         <TaskAssignee task={task} />
         <TaskDate task={task} />
         <div className="ml-auto">
           <TaskPriority task={task} />
         </div>
       </div>
+      {task.dueDate && isWithinWeekRange(task.dueDate) && (
+        <TaskDateText date={task.dueDate} />
+      )}
     </Card>
   );
 };
