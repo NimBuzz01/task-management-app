@@ -1,5 +1,5 @@
 import { TaskStatus } from "@/types/task";
-import StatusBadge from "../StatusBadge";
+import StatusBadge from "./StatusBadge";
 import { useTaskStore } from "@/store/useTaskStore";
 
 const StatusHeader = ({ status }: { status: TaskStatus }) => {
