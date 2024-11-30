@@ -7,8 +7,9 @@ const TaskCheck = ({ task }: { task: Task }) => {
   return (
     <CircleCheck
       className={cn(
+        "w-full h-full max-w-6 max-h-6",
         task.status === "Completed"
-          ? "fill-custom-status-success-500 text-custom-generic-white"
+          ? "fill-custom-status-success-500 text-custom-generic-white "
           : "text-custom-dark-500"
       )}
     />

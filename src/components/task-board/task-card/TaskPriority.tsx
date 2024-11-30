@@ -11,7 +11,13 @@ import { Task } from "@/types/task";
 import { Dot } from "lucide-react";
 import React from "react";
 
-const TaskPriority = ({ task }: { task: Task }) => {
+const TaskPriority = ({
+  task,
+  disabled,
+}: {
+  task: Task;
+  disabled?: boolean;
+}) => {
   const { id, priority } = task;
   const { updateProperty } = useTaskActions();
 
@@ -32,7 +38,12 @@ const TaskPriority = ({ task }: { task: Task }) => {
       value={priority}
       onValueChange={(value: string) => updateProperty(id, "priority", value)}
     >
-      <SelectTrigger className={triggerClasses}>
+      <SelectTrigger
+        className={cn(
+          triggerClasses,
+          disabled && "pointer-events-none cursor-default"
+        )}
+      >
         {priority ? (
           <>
             <Dot className="size-6" />
