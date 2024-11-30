@@ -4,7 +4,9 @@ import { persist } from "zustand/middleware";
 
 interface TaskState {
   tasks: Task[];
+  activeTask: Task | null;
   addTask: (task: Task) => void;
+  setActiveTask: (task: Task | null) => void;
   updateTask: (updatedTask: Task) => void;
   deleteTask: (taskId: string) => void;
   updateTaskProperty: (
@@ -18,9 +20,15 @@ export const useTaskStore = create<TaskState>()(
   persist(
     (set) => ({
       tasks: [],
+      activeTask: null,
       addTask: (task) => {
         set((state) => ({
           tasks: [...state.tasks, task],
+        }));
+      },
+      setActiveTask: (task) => {
+        set(() => ({
+          activeTask: task,
         }));
       },
       updateTask: (updatedTask) => {
