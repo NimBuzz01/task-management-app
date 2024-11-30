@@ -3,7 +3,13 @@ import { useTaskActions } from "@/hooks/useTaskActions";
 import { Task } from "@/types/task";
 import React from "react";
 
-const TaskName = ({ task, disabled }: { task: Task; disabled: boolean }) => {
+const TaskCardName = ({
+  task,
+  disabled,
+}: {
+  task: Task;
+  disabled: boolean;
+}) => {
   const { updateProperty } = useTaskActions();
 
   return disabled ? (
@@ -19,4 +25,4 @@ const TaskName = ({ task, disabled }: { task: Task; disabled: boolean }) => {
   );
 };
 
-export default TaskName;
+export default TaskCardName;

@@ -3,7 +3,7 @@ import { Task } from "@/types/task";
 import { CircleCheck } from "lucide-react";
 import React from "react";
 
-const TaskCheck = ({ task }: { task: Task }) => {
+const TaskCardCheck = ({ task }: { task: Task }) => {
   return (
     <CircleCheck
       className={cn(
@@ -16,4 +16,4 @@ const TaskCheck = ({ task }: { task: Task }) => {
   );
 };
 
-export default TaskCheck;
+export default TaskCardCheck;
