@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Management Application
 
-## Getting Started
+A **Task Management Application** built using **Next.js**, **TypeScript**, **Tailwind CSS**, and several modern libraries for an intuitive and interactive Kanban-style dashboard. Users can create, edit, organize, and manage tasks seamlessly.
 
-First, run the development server:
+Built by [Niamat Marjan](https://github.com/NimBuzz01) for Code94 Labs assessment.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Task Creation**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  - Add new tasks with details: Task Name, Priority, Status, Due Date, and Assignee.
+  - Dynamic remaining time text based on the due date.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Task Management**
 
-## Learn More
+  - Drag and drop tasks between sections (Todo, In Progress, Completed).
+  - Update task details (Task Name, Priority, Due Date, Assignee, and Description).
+  - Auto-save task details upon editing.
 
-To learn more about Next.js, take a look at the following resources:
+- **Task Viewing and Deletion**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - View all task details by clicking on a task.
+  - Delete tasks with a confirmation popup.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **UI Enhancements**
+  - Responsive and user-friendly design.
+  - Real-time task count per section.
+  - Dynamic time-based messages.
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [ShadCN/UI](https://ui.shadcn.com/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Drag and Drop**: [DND Kit](https://dndkit.com/)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/)
+- **Validation**: [Zod](https://zod.dev/)
+- **Date Utilities**: [date-fns](https://date-fns.org/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Installation
+
+## Clone the repository
+
+git clone `https://github.com/NimBuzz01/task-management-app.git`
+
+cd `task-management-app`
+
+## Install dependencies
+
+`npm install --legacy-peer-deps`
+
+## Start the development server
+
+`npm run dev`
+
+## Open the app in your browser
+
+`http://localhost:3000`
+
+# How to Use
+
+## Create a Task:
+
+1. Click the **"+ Add Task"** button under the desired section.
+2. Fill in the required details:
+   - **Task Name**
+   - **Priority**
+   - **Status**
+   - **Due Date**
+   - **Assignee**
+3. The task will automatically save if all fields are completed.
+
+## Update Task Details:
+
+1. Click on a task card to open the **task sheet**.
+2. Update any field, and changes will **auto-save**.
+
+## Move Tasks Between Sections:
+
+- Drag and drop a task card between **"Todo," "In Progress," and "Completed"** sections.
+
+## Delete a Task:
+
+1. Open the **task modal** and click the **delete icon**.
+2. Confirm the action in the **popup**.
