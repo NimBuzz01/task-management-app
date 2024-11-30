@@ -1,8 +1,8 @@
 import { Flag } from "lucide-react";
 import React from "react";
-import LabelBadge from "./LabelBadge";
-import TaskPriority from "../task-card/TaskPriority";
-import RemovePropertyButton from "./RemovePropertyButton";
+import LabelBadge from "../LabelBadge";
+import TaskPriority from "../TaskPriority";
+import RemovePropertyButton from "../RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 
 const TaskSheetPriority = ({ taskId }: { taskId: string }) => {

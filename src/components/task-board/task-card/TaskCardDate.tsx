@@ -4,7 +4,13 @@ import { Task } from "@/types/task";
 import React from "react";
 import { getDateStatusStyles } from "@/lib/utils/task-utils";
 
-const TaskDate = ({ task, disabled }: { task: Task; disabled?: boolean }) => {
+const TaskCardDate = ({
+  task,
+  disabled,
+}: {
+  task: Task;
+  disabled?: boolean;
+}) => {
   const { updateProperty } = useTaskActions();
 
   return (
@@ -17,4 +23,4 @@ const TaskDate = ({ task, disabled }: { task: Task; disabled?: boolean }) => {
   );
 };
 
-export default TaskDate;
+export default TaskCardDate;

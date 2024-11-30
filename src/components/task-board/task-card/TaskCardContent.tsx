@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import TaskCheck from "./TaskCheck";
-import TaskName from "./TaskName";
+import TaskCheck from "./TaskCardCheck";
+import TaskName from "./TaskCardName";
 import { Task } from "@/types/task";
-import TaskPriority from "./TaskPriority";
-import TaskAssignee from "./TaskAssignee";
-import TaskDate from "./TaskDate";
+import TaskPriority from "../TaskPriority";
+import TaskAssignee from "../TaskAssignee";
+import TaskDate from "./TaskCardDate";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTaskSheet } from "@/store/useTaskSheet";
 import { isWithinWeekRange } from "@/lib/utils/task-utils";
-import TaskDateText from "./TaskDateText";
-import TaskDescription from "./TaskDescription";
+import TaskDateText from "./TaskCardDateText";
+import TaskDescription from "./TaskCardDescription";
 
 const TaskCardContent = ({ task }: { task: Task }) => {
   const { setTask, setIsOpen } = useTaskSheet();

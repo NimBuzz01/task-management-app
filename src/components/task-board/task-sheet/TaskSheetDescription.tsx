@@ -1,5 +1,5 @@
 import React from "react";
-import LabelBadge from "./LabelBadge";
+import LabelBadge from "../LabelBadge";
 import { FileText } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 
