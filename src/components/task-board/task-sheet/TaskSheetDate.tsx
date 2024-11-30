@@ -1,9 +1,9 @@
 import { CalendarIcon } from "lucide-react";
 import React from "react";
-import LabelBadge from "./LabelBadge";
+import LabelBadge from "../LabelBadge";
 import { format } from "date-fns";
 import { DatePicker } from "@/components/ui/date-picker";
-import RemovePropertyButton from "./RemovePropertyButton";
+import RemovePropertyButton from "../RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 import { useTaskActions } from "@/hooks/useTaskActions";
 import { getDateStatusStyles } from "@/lib/utils/task-utils";

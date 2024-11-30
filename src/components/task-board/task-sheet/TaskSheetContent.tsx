@@ -1,6 +1,6 @@
-import DeleteTask from "./DeleteTask";
+import DeleteTask from "../DeleteTask";
 import { ArrowRight } from "lucide-react";
-import MarkCompleteButton from "./MarkCompleteButton";
+import MarkCompleteButton from "../MarkCompleteButton";
 import { useCallback } from "react";
 import TaskSheetName from "./TaskSheetName";
 import TaskSheetStatus from "./TaskSheetStatus";

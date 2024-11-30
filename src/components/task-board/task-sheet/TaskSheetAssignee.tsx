@@ -1,8 +1,8 @@
 import React from "react";
-import LabelBadge from "./LabelBadge";
+import LabelBadge from "../LabelBadge";
 import { User } from "lucide-react";
 import TaskAssignee from "../TaskAssignee";
-import RemovePropertyButton from "./RemovePropertyButton";
+import RemovePropertyButton from "../RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 
 const TaskSheetAssignee = ({ taskId }: { taskId: string }) => {
