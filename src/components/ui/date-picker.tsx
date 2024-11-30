@@ -16,15 +16,20 @@ import {
 export function DatePicker({
   value,
   onChange,
+  className,
 }: {
   value: Date | undefined;
   onChange: (date: Date | undefined) => void;
+  className?: string;
 }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
         {value ? (
-          <Button variant="outline" className="!caption-c1 p-0 px-2">
+          <Button
+            variant="outline"
+            className={cn("!caption-c1 p-0 px-2", className)}
+          >
             {format(value, "MMM d")}
           </Button>
         ) : (

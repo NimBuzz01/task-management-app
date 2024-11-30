@@ -6,6 +6,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import RemovePropertyButton from "./RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 import { useTaskActions } from "@/hooks/useTaskActions";
+import { getDateStatusStyles } from "@/lib/utils/task-utils";
 
 const TaskSheetDate = ({ taskId }: { taskId: string }) => {
   const { updateProperty } = useTaskActions();
@@ -22,7 +23,13 @@ const TaskSheetDate = ({ taskId }: { taskId: string }) => {
       <span className="body-b1 flex items-center gap-2">
         {task.dueDate ? (
           <>
-            <span>{format(task.dueDate, "MMM d")}</span>
+            <span
+              className={`py-1 rounded-md px-2 ${getDateStatusStyles(
+                task.dueDate
+              )}`}
+            >
+              {format(task.dueDate, "MMM d")}
+            </span>
             <RemovePropertyButton taskId={task.id} property="dueDate" />
           </>
         ) : (
