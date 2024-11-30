@@ -12,7 +12,13 @@ import { Task } from "@/types/task";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
 
-const TaskAssignee = ({ task }: { task: Task }) => {
+const TaskAssignee = ({
+  task,
+  disabled,
+}: {
+  task: Task;
+  disabled?: boolean;
+}) => {
   const assignees = useAssigneeStore((state) => state.assignees);
   const { updateProperty } = useTaskActions();
 
@@ -30,13 +36,14 @@ const TaskAssignee = ({ task }: { task: Task }) => {
       <SelectTrigger
         className={cn(
           "relative h-10 w-10 border-custom-dark-100 rounded-full p-0",
-          task.assignee ? "border-solid" : "border-dashed"
+          task.assignee ? "border-solid" : "border-dashed",
+          disabled ? "pointer-events-none cursor-default" : ""
         )}
       >
         {task.assignee ? (
           <Avatar className="w-full h-full">
             <AvatarImage src={task.assignee.avatar} alt={task.assignee.name} />
-            <AvatarFallback>{task.assignee.name[0]}</AvatarFallback>
+            <AvatarFallback>{task.assignee.name}</AvatarFallback>
           </Avatar>
         ) : (
           <div className="w-10 h-10">
