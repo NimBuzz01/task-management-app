@@ -2,8 +2,14 @@ import { useTaskStore } from "@/store/useTaskStore";
 import { Task } from "@/types/task";
 
 export const useTaskActions = () => {
-  const { addTask, updateTask, deleteTask, updateTaskProperty, setActiveTask } =
-    useTaskStore();
+  const {
+    tasks,
+    addTask,
+    updateTask,
+    deleteTask,
+    updateTaskProperty,
+    setActiveTask,
+  } = useTaskStore();
 
   const createTask = (task: Task) => {
     addTask(task);
@@ -25,5 +31,19 @@ export const useTaskActions = () => {
     setActiveTask(task);
   };
 
-  return { createTask, modifyTask, removeTask, updateProperty, setActive };
+  const clearEmptyTasks = () => {
+    const emptyTasks = tasks.filter(
+      (task) => !task.name && !task.priority && !task.assignee && !task.dueDate
+    );
+    emptyTasks.forEach((task) => deleteTask(task.id));
+  };
+
+  return {
+    createTask,
+    modifyTask,
+    removeTask,
+    updateProperty,
+    setActive,
+    clearEmptyTasks,
+  };
 };
