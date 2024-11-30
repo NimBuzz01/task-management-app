@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { useTaskSheet } from "@/store/useTaskSheet";
 import { isWithinWeekRange } from "@/lib/utils/task-utils";
 import TaskDateText from "./TaskDateText";
+import TaskDescription from "./TaskDescription";
 
 const TaskCardContent = ({ task }: { task: Task }) => {
   const { setTask, setIsOpen } = useTaskSheet();
@@ -26,6 +27,11 @@ const TaskCardContent = ({ task }: { task: Task }) => {
         <TaskName task={task} />
       </div>
       <Separator />
+      {task.description && (
+        <div className="p-2 px-4">
+          <TaskDescription task={task} />
+        </div>
+      )}
       <div className="p-2 px-4 flex items-center gap-2">
         <TaskAssignee task={task} />
         <TaskDate task={task} />
