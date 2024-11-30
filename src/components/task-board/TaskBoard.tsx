@@ -82,12 +82,7 @@ const TaskBoard = () => {
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {STATUS_COLUMNS.map((status) => (
-          <StatusColumn
-            key={status}
-            tasks={tasks}
-            status={status}
-            activeId={activeId}
-          />
+          <StatusColumn key={status} status={status} activeId={activeId} />
         ))}
       </div>
       <DragOverlay>
