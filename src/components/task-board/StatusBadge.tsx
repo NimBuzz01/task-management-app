@@ -31,7 +31,7 @@ const StatusBadge = ({
       />
       <span
         className={cn(
-          variant === "lg" ? "body-b2" : "body-b1",
+          variant === "lg" ? "body-b1 2xl:body-b2" : "body-b1",
           "font-semibold"
         )}
       >
