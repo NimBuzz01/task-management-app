@@ -14,21 +14,17 @@ import { DialogClose } from "@radix-ui/react-dialog";
 import { Trash } from "lucide-react";
 import toast from "react-hot-toast";
 
-interface DeleteTaskProps {
-  taskId: string;
-}
-
-const DeleteTask = ({ taskId }: DeleteTaskProps) => {
-  const { removeTask } = useTaskActions();
+const DeleteTask = ({ taskId }: { taskId: string }) => {
+  const { deleteTask } = useTaskActions();
   const { resetTask } = useTaskSheet();
 
   const handleDelete = async () => {
     try {
-      removeTask(taskId);
+      deleteTask(taskId);
       resetTask();
       toast.success("Task deleted successfully");
-    } catch (error) {
-      toast.error("Failed to delete task");
+    } catch (error: any) {
+      toast.error("Failed to delete task", error.message);
     }
   };
 

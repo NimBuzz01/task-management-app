@@ -15,11 +15,11 @@ const AddTaskButton = ({
   variant?: "default" | "icon";
   className?: string;
 }) => {
-  const { createTask, clearEmptyTasks } = useTaskActions();
+  const { addTask, clearEmptyTasks } = useTaskActions();
   const newTask = generateTask(status);
 
   const handleClick = () => {
-    createTask(newTask);
+    addTask(newTask);
     clearEmptyTasks();
   };
 
