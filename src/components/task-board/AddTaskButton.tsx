@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
-import { generateTask } from "@/lib/utils/task-utils";
+import { generateTask } from "@/lib/task-utils";
 import { TaskStatus } from "@/types/task";
 import { Plus } from "lucide-react";
 import React from "react";

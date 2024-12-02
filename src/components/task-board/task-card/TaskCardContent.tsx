@@ -8,7 +8,7 @@ import TaskDate from "./TaskCardDate";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTaskSheet } from "@/store/useTaskSheet";
-import { isWithinWeekRange } from "@/lib/utils/task-utils";
+import { isWithinWeekRange } from "@/lib/task-utils";
 import TaskDateText from "./TaskCardDateText";
 import TaskDescription from "./TaskCardDescription";
 import { useTaskActions } from "@/hooks/useTaskActions";

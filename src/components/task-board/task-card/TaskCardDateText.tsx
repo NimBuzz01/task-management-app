@@ -1,4 +1,4 @@
-import { getDateStatusText } from "@/lib/utils/task-utils";
+import { getDateStatusText } from "@/lib/task-utils";
 import { Clock } from "lucide-react";
 import React from "react";
 

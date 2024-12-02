@@ -1,6 +1,6 @@
 import { DatePicker } from "@/components/ui/date-picker";
 import { useTaskActions } from "@/hooks/useTaskActions";
-import { getDateStatusStyles } from "@/lib/utils/task-utils";
+import { getDateStatusStyles } from "@/lib/task-utils";
 import { useTaskStore } from "@/store/useTaskStore";
 import React from "react";
 

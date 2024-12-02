@@ -6,7 +6,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import RemovePropertyButton from "../RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 import { useTaskActions } from "@/hooks/useTaskActions";
-import { getDateStatusStyles } from "@/lib/utils/task-utils";
+import { getDateStatusStyles } from "@/lib/task-utils";
 
 const TaskSheetDate = ({ taskId }: { taskId: string }) => {
   const { updateTaskProperty } = useTaskActions();
