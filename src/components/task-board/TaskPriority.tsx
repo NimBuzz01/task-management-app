@@ -7,19 +7,25 @@ import {
 } from "@/components/ui/select";
 import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
-import { Task } from "@/types/task";
+import { useTaskStore } from "@/store/useTaskStore";
+import { TaskPriority as IPriority } from "@/types/task";
 import { Dot } from "lucide-react";
 import React from "react";
 
 const TaskPriority = ({
-  task,
-  disabled,
+  taskId,
+  isEditable = false,
 }: {
-  task: Task;
-  disabled?: boolean;
+  taskId: string;
+  isEditable?: boolean;
 }) => {
-  const { id, priority } = task;
-  const { updateProperty } = useTaskActions();
+  const { updateTaskProperty } = useTaskActions();
+
+  const task = useTaskStore((state) =>
+    state.tasks.find((task) => task.id === taskId)
+  );
+
+  if (!task) return null;
 
   const priorityStyles: Record<string, string> = {
     low: "text-custom-status-info-500 bg-custom-status-info-50",
@@ -29,22 +35,26 @@ const TaskPriority = ({
 
   const triggerClasses = cn(
     "!caption-c1 border-dashed rounded-md w-max text-custom-dark-300 !body-b1",
-    priority &&
-      `${priorityStyles[priority]} pr-2 pl-0 !font-semibold border-none`
+    task.priority &&
+      `${priorityStyles[task.priority]} pr-2 pl-0 !font-semibold border-none`
   );
 
   return (
     <Select
-      value={priority}
-      onValueChange={(value: string) => updateProperty(id, "priority", value)}
+      value={task.priority}
+      onValueChange={(value: IPriority) =>
+        updateTaskProperty(task.id, "priority", value)
+      }
     >
       <SelectTrigger
         className={cn(
           triggerClasses,
-          disabled && "pointer-events-none cursor-default"
+          !task.isTemporary &&
+            !isEditable &&
+            "pointer-events-none cursor-default"
         )}
       >
-        {priority ? (
+        {task.priority ? (
           <>
             <Dot className="size-6" />
             <SelectValue placeholder="Set priority" />
@@ -62,4 +72,4 @@ const TaskPriority = ({
   );
 };
 
-export default TaskPriority;
+export default React.memo(TaskPriority);

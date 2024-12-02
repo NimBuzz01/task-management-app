@@ -18,7 +18,7 @@ import { useTaskActions } from "@/hooks/useTaskActions";
 const STATUS_COLUMNS: TaskStatus[] = ["To Do", "In Progress", "Completed"];
 
 const TaskBoard = () => {
-  const { setActive, updateProperty } = useTaskActions();
+  const { setActiveTask, updateTaskProperty } = useTaskActions();
 
   const tasks = useTaskStore((state) => state.tasks);
   const activeTask = useTaskStore((state) => state.activeTask);
@@ -30,9 +30,9 @@ const TaskBoard = () => {
   const handleDragStart = useCallback(
     ({ active }: DragStartEvent) => {
       const task = tasks.find((task) => task.id === active.id);
-      setActive(task ?? null);
+      setActiveTask(task ?? null);
     },
-    [tasks, setActive]
+    [tasks, setActiveTask]
   );
 
   const handleDragEnd = useCallback(
@@ -43,12 +43,12 @@ const TaskBoard = () => {
         const activeTask = tasks.find((task) => task.id === active.id);
         const overContainer = over.id as TaskStatus;
         if (activeTask && activeTask.status !== overContainer) {
-          updateProperty(active.id as string, "status", overContainer);
+          updateTaskProperty(active.id as string, "status", overContainer);
         }
       }
-      setActive(null);
+      setActiveTask(null);
     },
-    [tasks, updateProperty, setActive]
+    [tasks, updateTaskProperty, setActiveTask]
   );
 
   return (

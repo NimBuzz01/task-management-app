@@ -22,7 +22,7 @@ const StatusColumn = ({ status }: { status: TaskStatus }) => {
       return filteredTasks.findIndex((task) => task.id === activeTask.id);
     }
     return -1;
-  }, [isOver, activeTask, filteredTasks]);
+  }, [status, isOver, activeTask, filteredTasks]);
 
   return (
     <div className="p-3 space-y-4 rounded-lg border-custom-dark-100 border-2 border-dashed overflow-hidden">

@@ -6,10 +6,10 @@ import { DatePicker } from "@/components/ui/date-picker";
 import RemovePropertyButton from "../RemovePropertyButton";
 import { useTaskStore } from "@/store/useTaskStore";
 import { useTaskActions } from "@/hooks/useTaskActions";
-import { getDateStatusStyles } from "@/lib/utils/task-utils";
+import { getDateStatusStyles } from "@/lib/task-utils";
 
 const TaskSheetDate = ({ taskId }: { taskId: string }) => {
-  const { updateProperty } = useTaskActions();
+  const { updateTaskProperty } = useTaskActions();
 
   const task = useTaskStore((state) =>
     state.tasks.find((task) => task.id === taskId)
@@ -36,7 +36,7 @@ const TaskSheetDate = ({ taskId }: { taskId: string }) => {
           <>
             <DatePicker
               value={task.dueDate}
-              onChange={(date) => updateProperty(task.id, "dueDate", date)}
+              onChange={(date) => updateTaskProperty(task.id, "dueDate", date)}
             />
             <span className="body-b1 text-custom-dark-300">No due date</span>
           </>
