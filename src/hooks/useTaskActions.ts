@@ -11,10 +11,13 @@ export const useTaskActions = () => {
   } = useTaskStore();
 
   const clearEmptyTasks = () => {
-    const emptyTasks = tasks.filter(
-      (task) => !task.name && !task.priority && !task.assignee && !task.dueDate
-    );
-    emptyTasks.forEach((task) => deleteTask(task.id));
+    tasks
+      .filter(
+        (task) =>
+          (!task.name && !task.priority && !task.assignee && !task.dueDate) ||
+          task.isTemporary
+      )
+      .forEach((task) => deleteTask(task.id));
   };
 
   return {
