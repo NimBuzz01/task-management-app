@@ -12,4 +12,5 @@ export interface Task {
   priority?: TaskPriority;
   dueDate?: Date;
   assignee?: Assignee;
+  isTemporary: boolean;
 }
