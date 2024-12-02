@@ -16,7 +16,7 @@ const TaskSheetPriority = ({ taskId }: { taskId: string }) => {
     <div className="grid grid-cols-2">
       <LabelBadge label="Priority" icon={Flag} />
       <div className="flex items-center gap-2">
-        <TaskPriority task={task} />
+        <TaskPriority taskId={task.id} isEditable />
         {task.priority && (
           <RemovePropertyButton taskId={task.id} property="priority" />
         )}
