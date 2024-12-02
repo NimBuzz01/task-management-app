@@ -8,25 +8,32 @@ import {
 import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
 import { useAssigneeStore } from "@/store/useAssigneeStore";
-import { Task } from "@/types/task";
+import { useTaskStore } from "@/store/useTaskStore";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
+import React from "react";
 
 const TaskAssignee = ({
-  task,
-  disabled,
+  taskId,
+  isEditable = false,
 }: {
-  task: Task;
-  disabled?: boolean;
+  taskId: string;
+  isEditable?: boolean;
 }) => {
   const assignees = useAssigneeStore((state) => state.assignees);
-  const { updateProperty } = useTaskActions();
+  const { updateTaskProperty } = useTaskActions();
+
+  const task = useTaskStore((state) =>
+    state.tasks.find((task) => task.id === taskId)
+  );
+
+  if (!task) return null;
 
   return (
     <Select
       value={task.assignee?.id}
       onValueChange={(value) =>
-        updateProperty(
+        updateTaskProperty(
           task.id,
           "assignee",
           assignees.find((a) => a.id === value)
@@ -37,7 +44,9 @@ const TaskAssignee = ({
         className={cn(
           "relative h-10 w-10 border-custom-dark-100 rounded-full p-0",
           task.assignee ? "border-solid" : "border-dashed",
-          disabled ? "pointer-events-none cursor-default" : ""
+          !task.isTemporary && !isEditable
+            ? "pointer-events-none cursor-default"
+            : ""
         )}
       >
         {task.assignee ? (
@@ -71,4 +80,4 @@ const TaskAssignee = ({
   );
 };
 
-export default TaskAssignee;
+export default React.memo(TaskAssignee);
