@@ -11,12 +11,12 @@ const RemovePropertyButton = ({
   taskId: string;
   property: keyof Task;
 }) => {
-  const { updateProperty } = useTaskActions();
+  const { updateTaskProperty } = useTaskActions();
   return (
     <Button
       size="icon"
       variant="ghost"
-      onClick={() => updateProperty(taskId, property, null)}
+      onClick={() => updateTaskProperty(taskId, property, null)}
     >
       <X className="w-8 h-8 text-custom-dark-300" />
     </Button>

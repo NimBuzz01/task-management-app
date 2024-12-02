@@ -11,7 +11,7 @@ interface MarkCompleteButtonProps {
 }
 
 const MarkCompleteButton = ({ taskId, className }: MarkCompleteButtonProps) => {
-  const { updateProperty } = useTaskActions();
+  const { updateTaskProperty } = useTaskActions();
 
   const task = useTaskStore((state) =>
     state.tasks.find((task) => task.id === taskId)
@@ -33,7 +33,7 @@ const MarkCompleteButton = ({ taskId, className }: MarkCompleteButtonProps) => {
   return (
     <Button
       variant="ghost"
-      onClick={() => updateProperty(taskId, "status", "Completed")}
+      onClick={() => updateTaskProperty(taskId, "status", "Completed")}
       className={buttonClass}
     >
       <CheckCircle />
@@ -42,4 +42,4 @@ const MarkCompleteButton = ({ taskId, className }: MarkCompleteButtonProps) => {
   );
 };
 
-export default MarkCompleteButton;
+export default React.memo(MarkCompleteButton);

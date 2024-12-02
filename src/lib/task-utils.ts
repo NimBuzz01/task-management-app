@@ -18,6 +18,7 @@ export const generateTask = (
   priority,
   dueDate,
   assignee,
+  isTemporary: true,
 });
 
 const getCurrentDate = () => new Date();

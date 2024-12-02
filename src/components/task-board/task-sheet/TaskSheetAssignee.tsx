@@ -16,7 +16,7 @@ const TaskSheetAssignee = ({ taskId }: { taskId: string }) => {
     <div className="grid grid-cols-2">
       <LabelBadge label="Assignee" icon={User} />
       <div className="flex items-center gap-2">
-        <TaskAssignee task={task} />
+        <TaskAssignee taskId={task.id} isEditable />
         {task.assignee && (
           <RemovePropertyButton taskId={task.id} property="assignee" />
         )}

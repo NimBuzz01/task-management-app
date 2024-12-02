@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useTaskActions } from "@/hooks/useTaskActions";
 import { cn } from "@/lib/utils";
-import { generateTask } from "@/lib/utils/task-utils";
+import { generateTask } from "@/lib/task-utils";
 import { TaskStatus } from "@/types/task";
 import { Plus } from "lucide-react";
 import React from "react";
@@ -15,11 +15,11 @@ const AddTaskButton = ({
   variant?: "default" | "icon";
   className?: string;
 }) => {
-  const { createTask, clearEmptyTasks } = useTaskActions();
+  const { addTask, clearEmptyTasks } = useTaskActions();
   const newTask = generateTask(status);
 
   const handleClick = () => {
-    createTask(newTask);
+    addTask(newTask);
     clearEmptyTasks();
   };
 
